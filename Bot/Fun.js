@@ -50,7 +50,7 @@ toSave.moderators = Funbot.moderators;
  
 Funbot.misc.version = "1";
 Funbot.misc.ready = true;
-var songBoundary = 60 * 6;
+var songBoundary = 60 * 10;
 var announcementTick = 60 * 10;
 var lastAnnouncement = 0;
 
@@ -154,7 +154,7 @@ Funbot.misc.FatosFlubber = [
 "Flubber já apanhou por ser nazista.",
 "Em 1847, nascia Flubber."];
  
-Funbot.misc.frasesbonitas = [
+Funbot.misc.fortune = [
 " You find beauty in ordinary things, do not lose this ability.",
 " Ideas are like children; there are none so wonderful as your own.",
 " It takes more than good memory to have good memories.",
