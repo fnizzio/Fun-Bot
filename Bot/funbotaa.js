@@ -451,44 +451,44 @@ function chatMe(msg)
             if(Funbot.misc.ready || Funbot.admins.indexOf(fromID) > -1 || API.getUser(data.fromID).permission > 1 || API.getUser(fromID).permission < 2){
                 switch(command[0].toLowerCase()){
  
-                case "command":
-                case "commands":
+                case "comandos":
+                case "cmd":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat(data.from+" My commands can be found here: http://goo.gl/hJ8WJk");
+                            API.sendChat(data.from+" Os meus comandos estão aqui: http://goo.gl/hJ8WJk");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" My commands can be founnd here: http://goo.gl/hJ8WJk");
+                            API.sendChat(command[1]+" Os meus comandos estão aqui: http://goo.gl/hJ8WJk");
                         }
                         break;
                 
-                case "test":
+                case "soumaneiro?":
                         if(Funbot.admins.indexOf(fromID) > -1){
-                            API.sendChat("@"+ data.from +" Test Successful");
+                            API.sendChat("@"+ data.from +", você é muito Maneiro.");
                             }else{
-                            API.sendChat("This command requires Admins only!");
+                            API.sendChat("Nenhum Maneiro identificado.");
                         }
                         break;
                         
-                case "ping":
+                case "soumaneiro":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                            API.sendChat("@"+ data.from +" Pong!");
+                            API.sendChat("@"+ data.from +", você é maneiro!");
                             }else{
-                            API.sendChat("This command requires staff members only!");
+                            API.sendChat("Este comando é restrito aos Maneiros, você não é maneiro!");
                         }
                         break;
                         
-                case "marco":
+                case "Marco!":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             API.sendChat("@"+ data.from +" Polo!");
                             }else{
-                            API.sendChat("This command requires staff members only!");
+                            API.sendChat("Este comando é restrito aos Maneiros!");
                         }
                         break;        
                         
-                case "skip":
+                case "pula":
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             Funbot.skip();
                         }else{
-                           API.sendChat("This command requires staff members only!");
+                           API.sendChat("Este comando é restrito aos Maneiros!");
                         }
                         break;
                         
@@ -496,7 +496,7 @@ function chatMe(msg)
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             API.moderateLockWaitList(false);
                         }else{
-                           API.sendChat("This command requires staff members only!");
+                           API.sendChat("Este comando é restrito aos Maneiros!");
                         }
                         break;
                         
@@ -518,7 +518,7 @@ function chatMe(msg)
                             var userid = getUserID(username);
                             API.moderateBanUser(userid, 0, API.BAN.HOUR);
                         }else{
-                            API.sendChat("This command requires staff members only!");
+                            API.sendChat("Este comando é restrito aos Maneiros!");
                         }
                         break;
                         
@@ -528,7 +528,7 @@ function chatMe(msg)
                             var userid = getUserID(username);
                             API.moderateAddDJ(userid);
                         }else{
-                            API.sendChat("This command requires staff members only!");
+                            API.sendChat("Este comando é restrito aos Maneiros!");
                         }
                         break;
                         
@@ -538,7 +538,7 @@ function chatMe(msg)
                             var userid = getUserID(username);
                             API.moderateRemoveDJ(userid);
                         }else{
-                            API.sendChat("This command requires staff members only!");
+                            API.sendChat("Este comando é restrito aos Maneiros!");
                         }
                         break;
                         
@@ -546,8 +546,7 @@ function chatMe(msg)
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             API.moderateLockWaitList(true);
                         }else{
-                           API.sendChat("This command requires staff members only!");
-                        }
+                           API.sendChat("Este comando é restrito aos Maneiros!"
                         break;         
                         
                 case "lockskip":
@@ -556,7 +555,7 @@ function chatMe(msg)
                             setTimeout("Funbot.skip();", 100);
                             setTimeout("API.moderateLockWaitList(false);", 700);
                         }else{
-                            API.sendChat("This command requires staff members only!");
+                            API.sendChat("Este comando é restrito aos Maneiros!");
                         }
                         break;
                   
@@ -564,8 +563,7 @@ function chatMe(msg)
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1 || typeof command[1] === "undefined"){
                            API.sendChat(command[1]);
                         }else{
-                         API.sendChat("This command requires staff members only!");
-                        }
+                         API.sendChat("Este comando é restrito aos Maneiros!")
                         break;
                         
                 case "linkin":
@@ -583,25 +581,25 @@ function chatMe(msg)
                 case "grab":
                 case "snag":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                        var addsong = ["[user] I am now grabbing current song.","[user] This song is now mine! :blush:","[user] Now adding this current music video..."];
+                        var addsong = ["[user] Eu agarrei a sua música.","[user] MUHOHAHAHAHA sua música agora é minha! :blush:","[user] adicionando sua música à minha coleção :v:"];
                         r = Math.floor(Math.random() * addsong.length);
                             API.sendChat(addsong[r].replace("user", data.from));
                             $(".icon-curate").click();
                             $($(".curate").children(".menu").children().children()[0]).mousedown();
                         }else{
-                         API.sendChat("This command requires staff members only!");
+                         API.sendChat("Este comando é restrito aos Maneiros!");
                         }
                         break;
  
-                   case "props":
+                   case "tesao":
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
-                           API.sendChat("@"+ data.from +" just gave props to @"+ API.getDJ().username +" for playing a dope track!");
+                           API.sendChat("@"+ data.from +" admira muito "+ API.getDJ().username +" por apresentar uma música tão tesão quanto essa.");
                            }
                         }
                         break;
                         
-                   case "songlink":
+                   case "essamusica":
                         if(API.getMedia().format == 1){
                             API.sendChat("@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
                         }else{
@@ -614,63 +612,63 @@ function chatMe(msg)
  
                    case "download":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Download your song free here: http://www.vebsi.com/");
+                            API.sendChat("Faça o download desta música aqui: http://www.vebsi.com/");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Download your song free here: http://www.vebsi.com/");
+                            API.sendChat(command[1]+" Faça o download desta música aqui: http://www.vebsi.com/");
                         }else{
-                            API.sendChat("Download your song free here: http://www.vebsi.com/");
+                            API.sendChat("Faça o download desta música aqui: http://www.vebsi.com/");
                         }
                         break;
  
                    case "woot":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
-                           API.sendChat("One woot coming up!");
+                           API.sendChat("Um Woot saindo quentinho do forno!");
                         setTimeout(function(){
                            document.getElementById("woot").click()
                         }, 650);
                         }
                         }else{
-                           API.sendChat("This command requires bouncer +");
+                           API.sendChat("Este comando requere o título de Maneiro.");
                         }
                         break;
  
                    case "meh":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
-                           API.sendChat("Bummer, A meh has been requested!!");
+                           API.sendChat("Meeehhh! Essa música não é muito boa.");
                         setTimeout(function(){
                            document.getElementById("meh").click()
                         }, 650);
                         }
                         }else{
-                           API.sendChat("This command requires bouncer +");
+                           API.sendChat(Faça o download desta música aqui:);
                         }
                         break;
  
                    case "join":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         setTimeout(function(){
-                        var joindj = ["[user] Time to spin a track! :speaker:","[user] Seems like i'm up!","[user] Now joinning the booth"];
+                        var joindj = ["[user] Mais um um maneiro pra botar um som da hora! :speaker:","[user] Pelo que parece, a noite será agitada! :v:","[user] agora se juntando à lista de DJs :v:"];
                         r = Math.floor(Math.random() * joindj.length);
                             API.sendChat(joindj[r].replace("user", data.from));
                             API.djJoin();
                         }, 100);
                         }else{
-                           API.sendChat("This command requires bouncer +");
+                           API.sendChat("Este comando requere o título de Maneiro.");
                         }
                         break;
  
                    case "leave":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         setTimeout(function(){
-                        var leavedj = ["[user] Now leaving the dj booth...","[user] Kicking me off :(","[user] Made a pic for you! http://i.imgur.com/4uVDb6f.gif  ....Loser"];
+                        var leavedj = ["[user] Menos um maneiro pra botar música boa... :(","[user] precisa sair pois possui vida além da internet.","[user] fiz uma gif pra você! http://i.imgur.com/4uVDb6f.gif  .... perdedor"];
                         r = Math.floor(Math.random() * leavedj.length);
                             API.sendChat(leavedj[r].replace("user", data.from));
                             API.djLeave();
                         }, 100);
                         }else {
-                           API.sendChat("This command requires bouncer +");
+                           API.sendChat("Desculpe, você não é maneiro o suficiente para mandar um robô avisar à platéia que você vai sair.");
                         }
                         break;
  
@@ -692,17 +690,17 @@ function chatMe(msg)
                         }
                         break;
                         
-                   case "source":
+                   case "ManeiroBot":
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                            API.sendChat("DJ - ɴᴇᴏɴ - TFL wrote me at github which is available here: http://goo.gl/iLRyWJ");
+                            API.sendChat("Eu mesmo! <3");
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
                         break;
                         
-                   case "reload":
+                   case "reiniciar":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                           API.sendChat("Now reloading script...");
+                           API.sendChat("Não me reinicie! Nãaaaoooooooo isso dói!");
                         setTimeout(function(){
                            Funbot.unhook();
                         }, 150);
@@ -710,34 +708,34 @@ function chatMe(msg)
                            Funbot.hook();
                         }, 550);
                         }else{
-                           API.sendChat("This command requires bouncer +");
+                           API.sendChat("Você não vai me reiniciar. Sabe por quê? Porque você não é Maneiro. HA!");
                         }
                         break;
                         
-                   case "die":
+                   case "MORRA!":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                           API.sendChat('Unhooking Events...');
+                           API.sendChat('Destruindo memórias de uma vida feliz...');
                         setTimeout(function(){
-                           API.sendChat('Deleting bot data...');
+                           API.sendChat('deletando a vida que sempre existiu em mim...');
                         }, 150);
                         setTimeout(function(){
-                           API.sendChat('Consider me dead');
+                           API.sendChat('Me considere morto.');
                         }, 750);
                         setTimeout(function(){
                            Funbot.unhook();
                         }, 700);
                         }else{
-                           API.sendChat("This command requires bouncer +");
+                           API.sendChat("NÃO! Apenas maneiros podem me matar.");
                         }
                         break;
  
-                   case "whywoot":
+                   case "abc2":
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                            API.sendChat("Plug gives you 1 point for wooting the current song if you don't like the song i suggest you remain neutral");
+                            API.sendChat("http://37.media.tumblr.com/9be0bc56388a5cf2d0eb8b1332584b73/tumblr_mszd06Ayun1rewbb3o1_500.gif");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Plug gives you 1 point for wooting the current song if you don't like the song i suggest you remain neutral");
+                            API.sendChat(command[1]+" Você sentiu isso? http://37.media.tumblr.com/9be0bc56388a5cf2d0eb8b1332584b73/tumblr_mszd06Ayun1rewbb3o1_500.gif");
                         }else{
-                            API.sendChat("Plug gives you 1 point for wooting the current song if you don't like the song i suggest you remain neutral");
+                            API.sendChat("http://37.media.tumblr.com/9be0bc56388a5cf2d0eb8b1332584b73/tumblr_mszd06Ayun1rewbb3o1_500.gif");
                         }
                         if(Funbot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             Funbot.misc.ready = false;
@@ -745,13 +743,12 @@ function chatMe(msg)
                         }
                         break;
  
-                   case "whymeh":
+                   case "brohug":
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                            API.sendChat("Reserve Mehs for songs that are a) extremely overplayed b) off genre c) absolutely god awful or d) troll songs. ");
+                            API.sendChat("http://37.media.tumblr.com/0ad79639e2cdf37178a7ec41e9503e2a/tumblr_mqpcjdO8mR1svkygno1_500.gif");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Reserve Mehs for songs that are a) extremely overplayed b) off genre c) absolutely god awful or d) troll songs. ");
-                        }else{
-                            API.sendChat("Reserve Mehs for songs that are a) extremely overplayed b) off genre c) absolutely god awful or d) troll songs. ");
+                            API.sendChat(command[1]+" Bro hug! http://37.media.tumblr.com/0ad79639e2cdf37178a7ec41e9503e2a/tumblr_mqpcjdO8mR1svkygno1_500.gif");
+                            API.sendChat("http://37.media.tumblr.com/0ad79639e2cdf37178a7ec41e9503e2a/tumblr_mqpcjdO8mR1svkygno1_500.gif");
                         }
                         if(Funbot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             Funbot.misc.ready = false;
@@ -759,16 +756,16 @@ function chatMe(msg)
                         }
                         break;
  
-                   case "help":
+                   case "ajuda":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Greetings! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music.");
+                            API.sendChat("Bem vindo! Para adicionar uma música à sua lista, clique no botão roxo no canto inferior esquerdo da tela e pesquise pela música no youtube. ;)");
                                 setTimeout(function(){
-                            API.sendChat("Ask a mod if you're unsure about your song choice.");
+                            API.sendChat("Não se esqueça de que apenas músicas dentro do limite de 5m30s são permitidas. Respeite os outros DJs!");
                          }, 650);
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+ "Greetings! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music.");
+                            API.sendChat(command[1]+ "Bem vindo! Para adicionar uma música à sua lista, clique no botão roxo no canto inferior esquerdo da tela e pesquise pela música no youtube. ;)");
                                 setTimeout(function(){
-                            API.sendChat("Ask a mod if you're unsure about your song choice.");
+                            API.sendChat("Não se esqueça de que apenas músicas dentro do limite de 5m30s são permitidas. Respeite os outros DJs!");
                          }, 650);
                         }
                         if(Funbot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
