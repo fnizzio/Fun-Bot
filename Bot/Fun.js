@@ -48,9 +48,9 @@ toSave = {};
 toSave.settings = Funbot.settings;
 toSave.moderators = Funbot.moderators;
  
-Funbot.misc.version = "Dalek-SEC";
+Funbot.misc.version = "1";
 Funbot.misc.ready = true;
-var songBoundary = 60 * 5,5;
+var songBoundary = 60 * 6;
 var announcementTick = 60 * 10;
 var lastAnnouncement = 0;
 
