@@ -103,7 +103,7 @@ var blockedArtists = [
 
 // Filter Keywords
 Funbot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","more fan","fan back","give me fans","gimme fans","need fan","fan for fan"];
-Funbot.filters.commandWords = [".linkin",".say",".soumaneiro?",".soumaneiro",".marco",".reward",".add",".addsong",".flipcoin",".frasesmaneiras",".dogfact",".hug",".8ball",".fortune",".songlink",".download",".help",".whywoot",".whymeh",".props",".votes",".woot",".meh",".version",".userstats @",".mystats",".source",".roomstats",".roomstats2",".register",".join",".leave",".roll",".NinaMorgan",".DrNizLast",".Vinaoo"];
+Funbot.filters.commandWords = [".linkin",".say",".soumaneiro?",".soumaneiro",".marco",".recompensar",".add",".addsong",".flipcoin",".hug",".8ball",".fortune",".essamusica",".download",".ajuda",".whywoot",".whymeh",".props",".votes",".woot",".meh",".version",".userstats @",".mystats",".source",".roomstats",".roomstats2",".register",".join",".leave",".roll",".NinaMorgan",".DrNizLast",".Vinaoo"];
 
 
 // Fun misc
@@ -1099,7 +1099,7 @@ function chatMe(msg)
                             }
                         }else{
                             if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
-                            var randomNinaMorgan = Math.floor(Math.random() * Funbot.misc.dogfact.length);
+                            var randomNinaMorgan = Math.floor(Math.random() * Funbot.misc.NinaMorgan.length);
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
@@ -1132,7 +1132,7 @@ function chatMe(msg)
                             }
                         }else{
                             if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
-                            var randomCatfact = Math.floor(Math.random() * Funbot.misc.catfact.length);
+                            var randomFlubberfact = Math.floor(Math.random() * Funbot.misc.FatosFlubber.length);
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
